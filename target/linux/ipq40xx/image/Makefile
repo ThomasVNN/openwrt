@@ -580,6 +580,21 @@ define Device/meraki_mr33
 endef
 TARGET_DEVICES += meraki_mr33
 
+define Device/nokia_wi2b-ac220i
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := Nokia Airscale
+	DEVICE_MODEL := WI2B-AC220i
+	SOC := qcom-ipq4029
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_PACKAGES := -swconfig kmod-spi-dev uboot-envtools
+	IMAGES := sysupgrade.bin rootfs.sqsh uImage.itb
+	IMAGE/rootfs.sqsh := append-rootfs
+	IMAGE/uImage.itb := append-kernel
+endef
+TARGET_DEVICES += nokia_wi2b-ac220i
+
 define Device/mobipromo_cm520-79f
 	$(call Device/FitzImage)
 	$(call Device/UbiFit)

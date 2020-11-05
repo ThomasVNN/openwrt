@@ -13,5 +13,8 @@ boot() {
 	linksys,mr8300)
 		mtd resetbc s_env || true
 		;;
+	nokia,wi2b-ac220i)
+		/usr/sbin/fw_setenv PKRstCnt 0
+		;;
 	esac
 }
