@@ -46,6 +46,14 @@ netgear,ex6150v2)
 	ucidef_set_led_wlan "wlan2g" "WLAN2G" "ex61x0v2:green:router" "phy0tpt"
 	ucidef_set_led_wlan "wlan5g" "WLAN5G" "ex61x0v2:green:client" "phy1tpt"
 	;;
+nokia,wi2b-ac220i)
+	ucidef_set_led_netdev "lan_link" "LAN" "ac220i:green:eth" "eth0" "link"
+	ucidef_set_led_netdev "lan_act" "LAN" "ac220i:red:eth" "eth0" "tx rx"
+	ucidef_set_led_wlan "wlan2g_link" "WLAN2G" "ac220i:green:wlan2g" "phy0tpt"
+	ucidef_set_led_wlan "wlan2g_assoc" "WLAN2G" "ac220i:red:wlan2g" "phy0assoc"
+	ucidef_set_led_wlan "wlan5g_link" "WLAN5G" "ac220i:green:wlan5g" "phy1tpt"
+	ucidef_set_led_wlan "wlan5g_assoc" "WLAN5G" "ac220i:red:wlan5g" "phy1assoc"
+	;;
 qxwlan,e2600ac-c1 |\
 qxwlan,e2600ac-c2)
 	ucidef_set_led_wlan "wlan2g" "WLAN0" "e2600ac:green:wlan0" "phy0tpt"

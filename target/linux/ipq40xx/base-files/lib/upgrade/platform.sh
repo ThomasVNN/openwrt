@@ -71,6 +71,12 @@ platform_do_upgrade() {
 		CI_KERNPART="part.safe"
 		nand_do_upgrade "$1"
 		;;
+	nokia,wi2b-ac220i)
+		CI_UBIPART="rootfs"
+		CI_KERNPART="kernel"
+		CI_ROOTPART="ubi_rootfs"
+		nand_do_upgrade "$1"
+		;;
 	openmesh,a42 |\
 	openmesh,a62)
 		PART_NAME="inactive"

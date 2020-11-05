@@ -305,6 +305,20 @@ define Device/netgear_ex6150v2
 endef
 TARGET_DEVICES += netgear_ex6150v2
 
+define Device/nokia_wi2b-ac220i
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_DTS := qcom-ipq4029-wi2b-ac220i
+	DEVICE_TITLE := Nokia Airscale WI2B-AC220i
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_PACKAGES := -swconfig kmod-spi-dev uboot-envtools
+	IMAGES := sysupgrade.bin rootfs.sqsh uImage.itb
+	IMAGE/rootfs.sqsh := append-rootfs
+	IMAGE/uImage.itb := append-kernel
+endef
+TARGET_DEVICES += nokia_wi2b-ac220i
+
 define Device/openmesh_a42
 	$(call Device/FitImageLzma)
 	DEVICE_DTS := qcom-ipq4018-a42

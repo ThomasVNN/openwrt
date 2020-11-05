@@ -183,6 +183,10 @@ case "$FIRMWARE" in
 		ath10kcal_extract "ART" 4096 12064
 		ath10kcal_patch_mac_crc $(mtd_get_mac_binary dnidata 0)
 		;;
+	nokia,wi2b-ac220i)
+		ath10kcal_extract "0:ART" 4096 12064
+		ath10kcal_patch_mac_crc $(macaddr_add $(mtd_get_mac_ascii 0:APPSBLENV ethaddr) +1)
+		;;
 	zyxel,nbg6617 |\
 	zyxel,wre6606)
 		ath10kcal_extract "ART" 4096 12064
@@ -244,6 +248,10 @@ case "$FIRMWARE" in
 	netgear,ex6150v2)
 		ath10kcal_extract "ART" 20480 12064
 		ath10kcal_patch_mac_crc $(mtd_get_mac_binary dnidata 12)
+		;;
+	nokia,wi2b-ac220i)
+		ath10kcal_extract "0:ART" 20480 12064
+		ath10kcal_patch_mac_crc $(macaddr_add $(mtd_get_mac_ascii 0:APPSBLENV ethaddr) +2)
 		;;
 	zyxel,nbg6617 |\
 	zyxel,wre6606)
